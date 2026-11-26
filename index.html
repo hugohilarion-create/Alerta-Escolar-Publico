@@ -3,864 +3,342 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alerta Escolar — Cuidar começa com um aviso</title>
+  <title>Campanha — Alerta Escolar | SENAI Morvan Figueiredo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="./styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: #0b0b0c;
+      color: #f5f5f6;
+    }
+    @media print {
+      .no-print { display: none !important; }
+      body { background: #ffffff; color: #111214; }
+    }
+    .bg-\[\#d8f39c\] {
+  background-color: #ffcb1e !important;
+ }
+
+.text-\[\#10130a\] {
+  color: #ffffff !important;
+}
+
+.text-\[\#d8f39c\] {
+  color: #ffcb1e !important;
+}
+  </style>
 </head>
-<body>
-  <!-- TELA 1: INÍCIO -->
-  <div class="page" id="homeScreen">
-    <header class="topbar">
-      <a href="#" class="brand" id="homeBrandLink" aria-label="Alerta Escolar">
-        <span class="brand-icon" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 10.5L12 3l9 7.5" />
-            <path d="M5 9.5V20h14V9.5" />
-            <path d="M10 20v-6h4v6" />
-          </svg>
-        </span>
-        <span class="brand-text">
-          <strong>Alerta</strong>
-          <small>Escolar</small>
-        </span>
+<body class="min-h-screen antialiased">
+  <!-- 1. TOPO -->
+  <header class="border-b border-white/10 bg-[#0b0b0c]/95 sticky top-0 z-30 no-print">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <span class="w-9 h-9 rounded-lg bg-[#d8f39c] text-[#10130a] font-extrabold flex items-center justify-center">⌂</span>
+        <div>
+          <strong class="block text-sm font-bold tracking-tight">Alerta Escolar</strong>
+          <small class="block text-xs text-[#9c9ea4]">Campanha Oficial · Projeto Integrador DEV 2026</small>
+        </div>
+      </div>
+      <nav class="flex flex-wrap items-center gap-5 text-xs text-[#9c9ea4]">
+        <a href="#posts" class="hover:text-white transition">Posts</a>
+        <a href="#banners" class="hover:text-white transition">Banners</a>
+        <a href="#plano" class="hover:text-white transition">Plano (10 dias)</a>
+        <a href="#equipe" class="hover:text-white transition">Equipe</a>
+        <a href="./index.html" class="px-3.5 py-2 rounded-lg bg-white text-[#111214] font-semibold hover:opacity-90 transition">Abrir Sistema →</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="max-w-6xl mx-auto px-6 pt-12 pb-10">
+    <p class="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#9c9ea4] mb-3">
+      CUIDAR COMEÇA COM UM AVISO · ESCOLA SENAI MORVAN FIGUEIREDO
+    </p>
+    <h1 class="text-4xl sm:text-6xl font-bold tracking-tight leading-[1.03] max-w-4xl">
+      Cuidar começa com um aviso.
+    </h1>
+    <p class="mt-4 text-base text-[#9c9ea4] max-w-2xl">
+      <strong class="text-white">Promessa da campanha:</strong> Avisar quem pode resolver em poucos passos e acompanhar cada etapa até a solução.
+    </p>
+
+    <!-- Banner do site integrado -->
+    <div class="mt-8 rounded-xl bg-[#121214] border border-white/10 p-5 flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <span class="text-[10px] font-semibold uppercase tracking-widest text-[#d8f39c]">BANNER DO SITE</span>
+        <p class="text-sm sm:text-base font-semibold text-white mt-1">
+          Viu um problema na escola? Cuidar começa com um aviso.
+        </p>
+      </div>
+      <a href="./index.html" class="px-4 py-2 rounded-lg bg-[#d8f39c] text-[#10130a] text-xs font-bold hover:opacity-90 transition">
+        Conheça →
       </a>
-
-      <button type="button" class="btn-login" id="btnLogin">Entrar</button>
-    </header>
-
-    <main class="hero">
-      <section class="hero-copy">
-        <p class="eyebrow">CUIDAR COMEÇA COM UM AVISO</p>
-        <h1 class="hero-title">
-          Viu um<br />
-          problema<br />
-          na escola?
-        </h1>
-        <p class="hero-description">
-          Avise quem pode resolver. Registre objetos quebrados, com defeito ou
-          faltando e acompanhe cada etapa.
-        </p>
-
-        <div class="hero-actions">
-          <button type="button" class="btn-primary" id="btnRegister">
-            <span>Registrar ocorrência</span>
-            <span class="arrow" aria-hidden="true">→</span>
-          </button>
-          <button type="button" class="btn-link" id="btnHasAccess">
-            Já tenho acesso
-          </button>
-        </div>
-      </section>
-
-      <aside class="preview-area" aria-label="Exemplo de ocorrência">
-        <div class="preview-stack">
-          <div class="occurrence-card">
-            <span class="card-label">EXEMPLO DE OCORRÊNCIA</span>
-
-            <div class="avatar-badge" id="cardAvatar">V</div>
-
-            <h2 class="card-title" id="cardTitle">Ventilador quebrado</h2>
-            <p class="card-location" id="cardLocation">Sala 12 · Bloco A</p>
-
-            <div class="progress-steps" id="progressSteps" role="group" aria-label="Etapas da ocorrência">
-              <button type="button" class="step-item is-done" data-step="0">
-                <span class="step-bar"></span>
-                <span class="step-name">Enviado</span>
-              </button>
-              <button type="button" class="step-item is-active" data-step="1">
-                <span class="step-bar"></span>
-                <span class="step-name">Em análise</span>
-              </button>
-              <button type="button" class="step-item" data-step="2">
-                <span class="step-bar"></span>
-                <span class="step-name">Resolvido</span>
-              </button>
-            </div>
-          </div>
-
-          <div class="toast-card" id="toastCard" role="status" aria-live="polite">
-            <div class="toast-header">
-              <span class="toast-dot" aria-hidden="true"></span>
-              <strong id="toastTitle">Equipe notificada</strong>
-            </div>
-            <p class="toast-message" id="toastMessage">
-              Seu aviso chegou a quem cuida.
-            </p>
-          </div>
-        </div>
-      </aside>
-    </main>
-
-    <footer class="footer">
-      <span>Escola Municipal Horizonte</span>
-      <span>Uma escola melhor começa com você.</span>
-    </footer>
-  </div>
-
-  <!-- TELA 2: ACESSO AO SISTEMA -->
-  <section class="auth-screen" id="authScreen" hidden aria-label="Acesso ao sistema">
-    <aside class="auth-left">
-      <div class="auth-left-top">
-        <a href="#" class="brand" id="authBrandHome" aria-label="Alerta Escolar">
-          <span class="brand-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 10.5L12 3l9 7.5" />
-              <path d="M5 9.5V20h14V9.5" />
-              <path d="M10 20v-6h4v6" />
-            </svg>
-          </span>
-          <span class="brand-text">
-            <strong>Alerta</strong>
-            <small>Escolar</small>
-          </span>
-        </a>
-      </div>
-
-      <div class="auth-left-center">
-        <p class="auth-eyebrow">BEM-VINDO DE VOLTA</p>
-        <h1 class="auth-hero-title">
-          Juntos,<br />
-          cuidamos<br />
-          do que é nosso.
-        </h1>
-        <p class="auth-hero-desc">
-          Entre para registrar e acompanhar os avisos da comunidade escolar.
-        </p>
-      </div>
-
-      <div class="auth-left-footer">
-        <span>Escola Municipal Horizonte</span>
-      </div>
-    </aside>
-
-    <main class="auth-right">
-      <div class="auth-right-top">
-        <button type="button" class="btn-back" id="btnBackHome">
-          ← Voltar para o início
-        </button>
-      </div>
-
-      <div class="auth-form-wrapper">
-        <p class="auth-form-eyebrow">ACESSO AO SISTEMA</p>
-        <h2 class="auth-form-title">Entre no Alerta Escolar</h2>
-        <p class="auth-form-subtitle">Use seus dados da escola para continuar.</p>
-
-        <div class="role-switch" role="tablist" aria-label="Tipo de usuário">
-          <button
-            type="button"
-            class="role-tab is-active"
-            id="tabStudent"
-            role="tab"
-            aria-selected="true"
-            data-role="student"
-          >
-            Aluno ou funcionário
-          </button>
-          <button
-            type="button"
-            class="role-tab"
-            id="tabAdmin"
-            role="tab"
-            aria-selected="false"
-            data-role="admin"
-          >
-            Equipe administrativa
-          </button>
-        </div>
-
-        <form class="login-form" id="loginForm">
-          <label class="auth-field">
-            <span>E-mail ou matrícula</span>
-            <input
-              type="text"
-              id="loginIdentifier"
-              value="ana.clara@escola.edu.br"
-              required
-            />
-          </label>
-
-          <label class="auth-field">
-            <span>Senha</span>
-            <input
-              type="password"
-              id="loginPassword"
-              value="123456789"
-              required
-            />
-          </label>
-
-          <button type="submit" class="btn-submit-dark">
-            <span>Entrar</span>
-            <span aria-hidden="true">→</span>
-          </button>
-
-          <p class="prototype-note" id="prototypeNote">
-            Este é um protótipo: use os dados preenchidos para entrar.
-          </p>
-        </form>
-      </div>
-    </main>
+    </div>
   </section>
 
-  <!-- TELAS 3, 4 E 5: PAINEL INTERNO -->
-  <div class="dashboard-screen" id="occurrencePage" hidden aria-label="Painel Alerta Escolar">
-    <aside class="sidebar">
-      <div class="sidebar-top">
-        <a href="#" class="brand" id="dashBrandLink" aria-label="Alerta Escolar">
-          <span class="brand-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 10.5L12 3l9 7.5" />
-              <path d="M5 9.5V20h14V9.5" />
-              <path d="M10 20v-6h4v6" />
-            </svg>
-          </span>
-          <span class="brand-text">
-            <strong>Alerta</strong>
-            <small>Escolar</small>
-          </span>
-        </a>
-
-        <p class="sidebar-section-label">ESPAÇO DA ESCOLA</p>
-
-        <nav class="sidebar-nav" aria-label="Navegação da escola">
-          <button type="button" class="nav-item" data-nav="visao-geral">
-            <span class="nav-ico" aria-hidden="true">⊞</span>
-            <span>Visão geral</span>
-          </button>
-
-          <button type="button" class="nav-item is-active" data-nav="nova-ocorrencia">
-            <span class="nav-ico" aria-hidden="true">+</span>
-            <span>Nova ocorrência</span>
-          </button>
-
-          <button type="button" class="nav-item" data-nav="minhas-ocorrencias">
-            <span class="nav-ico" aria-hidden="true">☰</span>
-            <span>Minhas ocorrências</span>
-          </button>
-
-          <button type="button" class="nav-item" data-nav="administracao">
-            <span class="nav-ico" aria-hidden="true">✓</span>
-            <span>Administração</span>
-          </button>
-        </nav>
-      </div>
-
-      <div class="sidebar-bottom">
-        <div class="sidebar-promo">
-          <strong>Uma escola melhor começa com você.</strong>
-          <p>Viu algo fora do lugar? Conte para a gente.</p>
-          <span>Cuidar é coisa de todos.</span>
-        </div>
-
-        <button type="button" class="sidebar-help" id="btnHelpCenter">
-          <span aria-hidden="true">?</span>
-          <span>Precisa de ajuda?</span>
-        </button>
-
-        <div class="sidebar-footer-brand">
-          <strong>Alerta Escolar</strong>
-          <small>Cuidando do nosso espaço</small>
-        </div>
-      </div>
-    </aside>
-
-    <div class="dash-main">
-      <header class="dash-topbar">
-        <div class="dash-school-info">
-          <span class="dash-school-eyebrow">ESCOLA</span>
-          <strong class="dash-school-name">Escola Municipal Horizonte</strong>
-        </div>
-
-        <div class="dash-user-area">
-          <button type="button" class="icon-bell" id="btnNotifications" aria-label="Notificações">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
-              <path d="M13.73 21a2 2 0 0 1-3.46 0" />
-              </svg>
-          </button>
-
-          <div class="user-profile">
-            <strong id="dashUserName">Olá, Ana Clara</strong>
-            <small id="dashUserRole">Estudante · 2º ano B</small>
-          </div>
-        </div>
-      </header>
-
-      <main class="dash-content">
-        <!-- VISTA 1: VISÃO GERAL -->
-        <section class="dash-view" id="view-visao-geral" hidden aria-label="Visão geral">
-          <div class="dash-heading-row">
-            <div>
-              <p class="dash-eyebrow">VISÃO GERAL</p>
-              <h1 class="dash-title" id="overviewGreeting">Bom dia, Ana Clara.</h1>
-              <p class="dash-subtitle">
-                Seu olhar ajuda a tornar a escola melhor para todos.
-              </p>
-            </div>
-
-            <button type="button" class="btn-submit-occurrence" id="btnOverviewNewOccurrence">
-              <span>+ Nova ocorrência</span>
-            </button>
-          </div>
-
-          <div class="overview-banner">
-            <div class="overview-banner-left">
-              <span class="overview-banner-eyebrow">ALERTA ESCOLAR</span>
-              <h2>Encontrou algo fora do lugar?</h2>
-              <p>Leva menos de dois minutos para avisar a equipe responsável.</p>
-              <button type="button" class="btn-banner-white" id="btnMakeReport">
-                <span>Fazer um registro</span>
-                <span aria-hidden="true">→</span>
-              </button>
-            </div>
-
-            <div class="overview-banner-right">
-              <strong class="overview-big-num" id="overviewPendingCount">03</strong>
-              <span>avisos aguardando avaliação</span>
-            </div>
-          </div>
-
-          <div class="overview-steps-grid">
-            <div class="overview-step-card">
-              <span class="overview-step-num">01</span>
-              <h3>Conte o que aconteceu</h3>
-              <p>Informe o objeto, o local e o problema.</p>
-            </div>
-
-            <div class="overview-step-card">
-              <span class="overview-step-num">02</span>
-              <h3>A equipe recebe</h3>
-              <p>Seu aviso chega ao setor responsável.</p>
-            </div>
-
-            <div class="overview-step-card">
-              <span class="overview-step-num">03</span>
-              <h3>Acompanhe a solução</h3>
-              <p>Veja quando estiver em andamento ou resolvido.</p>
-            </div>
-          </div>
-
-          <div class="recent-section">
-            <div class="recent-head">
-              <div>
-                <h2>Registros recentes</h2>
-                <p>Acompanhe suas últimas ocorrências.</p>
-              </div>
-              <button type="button" class="btn-link-inline" id="btnSeeAllRecords">
-                Ver todos →
-              </button>
-            </div>
-
-            <div class="table-card">
-              <table class="records-table">
-                <thead>
-                  <tr>
-                    <th>OBJETO / OCORRÊNCIA</th>
-                    <th>LOCAL</th>
-                    <th>TIPO</th>
-                    <th>REGISTRO</th>
-                    <th>STATUS</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody id="recentRecordsBody">
-                  <tr class="record-row">
-                    <td><strong>ventilador</strong><small>#1285</small></td>
-                    <td>Biblioteca</td>
-                    <td>Quebrado</td>
-                    <td>Hoje</td>
-                    <td><span class="status-badge is-pending">Pendente</span></td>
-                    <td class="row-arrow">›</td>
-                  </tr>
-                  <tr class="record-row">
-                    <td><strong>Ventilador</strong><small>#1284</small></td>
-                    <td>Sala 12</td>
-                    <td>Quebrado</td>
-                    <td>12 nov. 2026</td>
-                    <td><span class="status-badge is-pending">Pendente</span></td>
-                    <td class="row-arrow">›</td>
-                  </tr>
-                  <tr class="record-row">
-                    <td><strong>Projetor</strong><small>#1279</small></td>
-                    <td>Laboratório</td>
-                    <td>Com defeito</td>
-                    <td>11 nov. 2026</td>
-                    <td><span class="status-badge is-progress">Em andamento</span></td>
-                    <td class="row-arrow">›</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
-
-        <!-- VISTA 2: NOVA OCORRÊNCIA -->
-        <section class="dash-view" id="view-nova-ocorrencia" aria-label="Nova ocorrência">
-          <div class="dash-heading-row">
-            <div>
-              <p class="dash-eyebrow">REGISTRAR UM PROBLEMA</p>
-              <h1 class="dash-title">O que precisa de cuidado?</h1>
-              <p class="dash-subtitle">
-                Conte o que aconteceu. A equipe responsável cuida do próximo passo.
-              </p>
-            </div>
-
-            <div class="dash-breadcrumb">
-              <span>Minhas ocorrências</span>
-              <span>/</span>
-              <strong>Nova ocorrência</strong>
-            </div>
-          </div>
-
-          <div class="dash-grid">
-            <form class="form-card" id="newOccurrenceForm">
-              <div class="form-card-head">
-                <h2>Detalhes da ocorrência</h2>
-                <p>Os campos com * são obrigatórios.</p>
-              </div>
-
-              <div class="form-block">
-                <label class="form-block-label">1. Qual é o tipo de problema? *</label>
-                <div class="problem-types" id="problemTypes">
-                  <button type="button" class="problem-card is-selected" data-type="Quebrado">
-                    <span class="problem-card-top">
-                      <strong>Quebrado</strong>
-                      <span class="radio-check is-checked" aria-hidden="true">✓</span>
-                    </span>
-                    <small>Algo está danificado</small>
-                  </button>
-
-                  <button type="button" class="problem-card" data-type="Com defeito">
-                    <span class="problem-card-top">
-                      <strong>Com defeito</strong>
-                      <span class="radio-check" aria-hidden="true"></span>
-                    </span>
-                    <small>Não funciona bem</small>
-                  </button>
-
-                  <button type="button" class="problem-card" data-type="Faltando">
-                    <span class="problem-card-top">
-                      <strong>Faltando</strong>
-                      <span class="radio-check" aria-hidden="true"></span>
-                    </span>
-                    <small>Não está no lugar</small>
-                  </button>
-                </div>
-              </div>
-
-              <div class="form-block">
-                <label class="form-block-label">2. Identifique o objeto e o local *</label>
-                <div class="two-cols">
-                  <div class="input-group">
-                    <label for="occObject">Objeto ou equipamento</label>
-                    <input
-                      type="text"
-                      id="occObject"
-                      placeholder="Ex.: Ventilador"
-                      required
-                    />
-                  </div>
-
-                  <div class="input-group">
-                    <label for="occLocation">Local da escola</label>
-                    <select id="occLocation" required>
-                      <option value="" selected disabled>Selecione um local</option>
-                      <option value="Sala 12 · Bloco A">Sala 12 · Bloco A</option>
-                      <option value="Sala 08 · Bloco A">Sala 08 · Bloco A</option>
-                      <option value="Laboratório">Laboratório</option>
-                      <option value="Biblioteca">Biblioteca</option>
-                      <option value="Pátio central">Pátio central</option>
-                      <option value="Banheiro · Bloco B">Banheiro · Bloco B</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-block">
-                <label class="form-block-label" for="occDescription">3. Descreva o problema *</label>
-                <textarea
-                  id="occDescription"
-                  rows="4"
-                  maxlength="500"
-                  placeholder="Explique o que aconteceu..."
-                  required
-                ></textarea>
-                <div class="textarea-meta">
-                  <span>Não inclua dados pessoais.</span>
-                  <span id="descCounter">0 / 500</span>
-                </div>
-              </div>
-
-              <div class="form-block">
-                <div class="label-with-tag">
-                  <label class="form-block-label" for="occPhotoInput">4. Adicione uma foto</label>
-                  <span class="optional-tag">Opcional</span>
-                </div>
-
-                <input type="file" id="occPhotoInput" accept="image/png, image/jpeg" hidden />
-                <button type="button" class="upload-box" id="btnUploadPhoto">
-                  <span class="upload-icon" aria-hidden="true">↑</span>
-                  <span class="upload-text">
-                    <strong id="uploadLabel">Clique para enviar uma foto</strong>
-                    <small id="uploadSubtext">JPG ou PNG · até 5 MB</small>
-                  </span>
-                </button>
-              </div>
-
-              <div class="form-card-footer">
-                <button type="button" class="btn-cancel-plain" id="btnCancelOccurrence">
-                  Cancelar
-                </button>
-
-                <button type="submit" class="btn-submit-occurrence">
-                  <span>Enviar ocorrência</span>
-                  <span aria-hidden="true">→</span>
-                </button>
-              </div>
-            </form>
-
-            <div class="side-info-col">
-              <section class="steps-panel" aria-label="E depois de enviar?">
-                <h2>E depois de enviar?</h2>
-                <p class="steps-panel-sub">Você não precisa resolver sozinho.</p>
-
-                <ol class="timeline-list">
-                  <li>
-                    <span class="timeline-num is-dark">1</span>
-                    <div>
-                      <strong>Recebemos seu aviso</strong>
-                      <small>A ocorrência entra como pendente.</small>
-                    </div>
-                  </li>
-
-                  <li>
-                    <span class="timeline-num">2</span>
-                    <div>
-                      <strong>A equipe entra em ação</strong>
-                      <small>O status muda para em andamento.</small>
-                    </div>
-                  </li>
-
-                  <li>
-                    <span class="timeline-num">3</span>
-                    <div>
-                      <strong>Você acompanha a solução</strong>
-                      <small>Tudo pronto? Marcamos resolvido.</small>
-                    </div>
-                  </li>
-                </ol>
-              </section>
-
-              <section class="safety-panel" aria-label="Segurança em primeiro lugar">
-                <span class="safety-icon" aria-hidden="true">△</span>
-                <h3>Segurança em primeiro lugar</h3>
-                <p>
-                  Se houver risco imediato, avise um funcionário da escola. Não toque
-                  em fios ou equipamentos danificados.
-                </p>
-              </section>
-            </div>
-          </div>
-        </section>
-
-        <!-- VISTA 3: MINHAS OCORRÊNCIAS -->
-        <section class="dash-view" id="view-minhas-ocorrencias" hidden aria-label="Minhas ocorrências">
-          <div class="dash-heading-row">
-            <div>
-              <p class="dash-eyebrow">ACOMPANHAMENTO</p>
-              <h1 class="dash-title">Minhas ocorrências</h1>
-              <p class="dash-subtitle">
-                Cada aviso é um passo para uma escola mais segura e acolhedora.
-              </p>
-            </div>
-
-            <button type="button" class="btn-submit-occurrence" id="btnMyNewOccurrence">
-              <span>+ Nova ocorrência</span>
-            </button>
-          </div>
-
-          <div class="care-banner">
-            <div>
-              <h2>Seu olhar faz a diferença.</h2>
-              <p>Encontrou algo quebrado, com defeito ou faltando? Registre aqui e acompanhe a solução.</p>
-            </div>
-            <span class="care-pill">Juntos, a gente cuida.</span>
-          </div>
-
-          <div class="kpi-three-grid">
-            <div class="kpi-card">
-              <div class="kpi-top">
-                <span>Pendentes</span>
-                <span class="kpi-icon-box" aria-hidden="true">◷</span>
-              </div>
-              <strong class="kpi-value">03</strong>
-              <small>Aguardando avaliação</small>
-            </div>
-
-            <div class="kpi-card">
-              <div class="kpi-top">
-                <span>Em andamento</span>
-                <span class="kpi-icon-box" aria-hidden="true">↻</span>
-              </div>
-              <strong class="kpi-value">01</strong>
-              <small>A equipe já está cuidando</small>
-            </div>
-
-            <div class="kpi-card">
-              <div class="kpi-top">
-                <span>Resolvidas</span>
-                <span class="kpi-icon-box" aria-hidden="true">✓</span>
-              </div>
-              <strong class="kpi-value">02</strong>
-              <small>Nosso espaço melhorando</small>
-            </div>
-          </div>
-
-          <div class="records-toolbar">
-            <div>
-              <h2>Seus registros</h2>
-              <p id="myRecordsCount">6 ocorrências enviadas</p>
-            </div>
-
-            <div class="toolbar-controls">
-              <div class="search-box">
-                <span aria-hidden="true">🔍</span>
-                <input
-                  type="search"
-                  id="searchMyRecords"
-                  placeholder="Buscar objeto ou local"
-                />
-              </div>
-
-              <select id="filterMyStatus" class="filter-select" aria-label="Filtrar por status">
-                <option value="Todos">Todos</option>
-                <option value="Pendente">Pendente</option>
-                <option value="Em andamento">Em andamento</option>
-                <option value="Resolvido">Resolvido</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="table-card">
-            <table class="records-table">
-              <thead>
-                <tr>
-                  <th>OBJETO / OCORRÊNCIA</th>
-                  <th>LOCAL</th>
-                  <th>TIPO</th>
-                  <th>REGISTRO</th>
-                  <th>STATUS</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody id="myRecordsBody">
-                <tr class="record-row" data-status="Pendente" data-search="ventilador biblioteca quebrado">
-                  <td><strong>ventilador</strong><small>#1285</small></td>
-                  <td>Biblioteca</td>
-                  <td>Quebrado</td>
-                  <td>Hoje</td>
-                  <td><span class="status-badge is-pending">Pendente</span></td>
-                  <td class="row-arrow">›</td>
-                </tr>
-                <tr class="record-row" data-status="Pendente" data-search="ventilador sala 12 quebrado">
-                  <td><strong>Ventilador</strong><small>#1284</small></td>
-                  <td>Sala 12</td>
-                  <td>Quebrado</td>
-                  <td>12 nov. 2026</td>
-                  <td><span class="status-badge is-pending">Pendente</span></td>
-                  <td class="row-arrow">›</td>
-                </tr>
-                <tr class="record-row" data-status="Em andamento" data-search="projetor laboratório com defeito">
-                  <td><strong>Projetor</strong><small>#1279</small></td>
-                  <td>Laboratório</td>
-                  <td>Com defeito</td>
-                  <td>11 nov. 2026</td>
-                  <td><span class="status-badge is-progress">Em andamento</span></td>
-                  <td class="row-arrow">›</td>
-                </tr>
-                <tr class="record-row" data-status="Pendente" data-search="saboneteira banheiro bloco b faltando">
-                  <td><strong>Saboneteira</strong><small>#1275</small></td>
-                  <td>Banheiro · bloco B</td>
-                  <td>Faltando</td>
-                  <td>10 nov. 2026</td>
-                  <td><span class="status-badge is-pending">Pendente</span></td>
-                  <td class="row-arrow">›</td>
-                </tr>
-                <tr class="record-row" data-status="Resolvido" data-search="cadeira sala 08 quebrado">
-                  <td><strong>Cadeira</strong><small>#1260</small></td>
-                  <td>Sala 08</td>
-                  <td>Quebrado</td>
-                  <td>07 nov. 2026</td>
-                  <td><span class="status-badge is-resolved">Resolvido</span></td>
-                  <td class="row-arrow">›</td>
-                </tr>
-                <tr class="record-row" data-status="Resolvido" data-search="bebedouro pátio central com defeito">
-                  <td><strong>Bebedouro</strong><small>#1248</small></td>
-                  <td>Pátio central</td>
-                  <td>Com defeito</td>
-                  <td>05 nov. 2026</td>
-                  <td><span class="status-badge is-resolved">Resolvido</span></td>
-                  <td class="row-arrow">›</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <!-- VISTA 4: ADMINISTRAÇÃO -->
-        <section class="dash-view" id="view-administracao" hidden aria-label="Administração">
-          <div class="dash-heading-row">
-            <div>
-              <p class="dash-eyebrow">ÁREA ADMINISTRATIVA</p>
-              <h1 class="dash-title">Cuidar da escola, juntos.</h1>
-              <p class="dash-subtitle">
-                Organize os avisos da comunidade e mantenha todos informados.
-              </p>
-            </div>
-
-            <span class="team-access-pill">◇ Acesso da equipe</span>
-          </div>
-
-          <div class="kpi-four-grid">
-            <div class="kpi-card">
-              <span>Ocorrências no total</span>
-              <strong class="kpi-value">06</strong>
-              <small>Toda a escola</small>
-            </div>
-
-            <div class="kpi-card">
-              <span>Pendentes</span>
-              <strong class="kpi-value" id="adminPendingVal">03</strong>
-              <small>Aguardando avaliação</small>
-            </div>
-
-            <div class="kpi-card">
-              <span>Em andamento</span>
-              <strong class="kpi-value" id="adminProgressVal">01</strong>
-              <small>Sob os cuidados da equipe</small>
-            </div>
-
-            <div class="kpi-card">
-              <span>Resolvidas</span>
-              <strong class="kpi-value" id="adminResolvedVal">02</strong>
-              <small>Registros concluídos</small>
-            </div>
-          </div>
-
-          <div class="admin-split-grid">
-            <div class="admin-table-col">
-              <div class="records-toolbar">
-                <div>
-                  <h2>Todas as ocorrências</h2>
-                  <p>6 registros · do mais recente ao mais antigo</p>
-                </div>
-              </div>
-
-              <div class="table-card">
-                <table class="records-table admin-records-table">
-                  <thead>
-                    <tr>
-                      <th>OBJETO / OCORRÊNCIA</th>
-                      <th>LOCAL</th>
-                      <th>STATUS</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody id="adminRecordsList">
-                    <tr class="admin-row" data-code="1285" data-title="Ventilador quebrado" data-location="Biblioteca" data-author="Ana Clara · Estudante" data-date="13 nov. 2026" data-desc="O ventilador da biblioteca apresenta falha no funcionamento." data-status="Pendente">
-                      <td><strong>ventilador</strong><small>#1285</small></td>
-                      <td>Biblioteca</td>
-                      <td><span class="status-badge is-pending">Pendente</span></td>
-                      <td class="row-arrow">›</td>
-                    </tr>
-                    <tr class="admin-row is-selected" data-code="1284" data-title="Ventilador quebrado" data-location="Sala 12" data-author="Ana Clara · Estudante" data-date="12 nov. 2026" data-desc="O ventilador da sala 12 está com uma das hélices quebrada e não pode ser utilizado." data-status="Pendente">
-                      <td><strong>Ventilador</strong><small>#1284</small></td>
-                      <td>Sala 12</td>
-                      <td><span class="status-badge is-pending">Pendente</span></td>
-                      <td class="row-arrow">›</td>
-                    </tr>
-                    <tr class="admin-row" data-code="1279" data-title="Projetor com defeito" data-location="Laboratório" data-author="Lucas Mendes · Estudante" data-date="11 nov. 2026" data-desc="O projetor do laboratório perde sinal de imagem após alguns minutos ligado." data-status="Em andamento">
-                      <td><strong>Projetor</strong><small>#1279</small></td>
-                      <td>Laboratório</td>
-                      <td><span class="status-badge is-progress">Em andamento</span></td>
-                      <td class="row-arrow">›</td>
-                    </tr>
-                    <tr class="admin-row" data-code="1275" data-title="Saboneteira faltando" data-location="Banheiro · bloco B" data-author="Beatriz Souza · Funcionária" data-date="10 nov. 2026" data-desc="A saboneteira do banheiro do bloco B precisa de reposição." data-status="Pendente">
-                      <td><strong>Saboneteira</strong><small>#1275</small></td>
-                      <td>Banheiro · bloco B</td>
-                      <td><span class="status-badge is-pending">Pendente</span></td>
-                      <td class="row-arrow">›</td>
-                    </tr>
-                    <tr class="admin-row" data-code="1260" data-title="Cadeira quebrada" data-location="Sala 08" data-author="Rafael Lima · Estudante" data-date="07 nov. 2026" data-desc="Uma das cadeiras da sala 08 estava com o encosto solto e foi substituída." data-status="Resolvido">
-                      <td><strong>Cadeira</strong><small>#1260</small></td>
-                      <td>Sala 08</td>
-                      <td><span class="status-badge is-resolved">Resolvido</span></td>
-                      <td class="row-arrow">›</td>
-                    </tr>
-                    <tr class="admin-row" data-code="1248" data-title="Bebedouro com defeito" data-location="Pátio central" data-author="Marina Costa · Equipe" data-date="05 nov. 2026" data-desc="O fluxo de água fria do bebedouro do pátio central foi normalizado." data-status="Resolvido">
-                      <td><strong>Bebedouro</strong><small>#1248</small></td>
-                      <td>Pátio central</td>
-                      <td><span class="status-badge is-resolved">Resolvido</span></td>
-                      <td class="row-arrow">›</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            <aside class="admin-detail-card" aria-label="Detalhes da ocorrência selecionada">
-              <div class="detail-top-meta">
-                <span id="detailCode">OCORRÊNCIA #1284</span>
-                <span class="status-badge is-pending" id="detailStatusBadge">Pendente</span>
-              </div>
-
-              <h3 class="detail-title" id="detailTitle">Ventilador quebrado</h3>
-              <p class="detail-location" id="detailLocation">Sala 12</p>
-
-              <div class="detail-divider"></div>
-
-              <div class="detail-block">
-                <span class="detail-label">REGISTRADO POR</span>
-                <strong id="detailAuthor">Ana Clara · Estudante</strong>
-                <small id="detailDate">12 nov. 2026</small>
-              </div>
-
-              <div class="detail-block">
-                <span class="detail-label">DESCRIÇÃO</span>
-                <p class="detail-desc" id="detailDesc">
-                  O ventilador da sala 12 está com uma das hélices quebrada e não pode ser utilizado.
-                </p>
-              </div>
-
-              <div class="detail-divider"></div>
-
-              <form id="updateStatusForm" class="update-status-form">
-                <h4>Atualizar andamento</h4>
-                <p>O novo status ficará visível para o solicitante.</p>
-
-                <label for="detailStatusSelect" class="detail-field-label">Status da ocorrência</label>
-                <select id="detailStatusSelect" class="detail-select">
-                  <option value="Pendente">Pendente</option>
-                  <option value="Em andamento">Em andamento</option>
-                  <option value="Resolvido">Resolvido</option>
-                </select>
-
-                <button type="submit" class="btn-save-status">
-                  <span>✓ Salvar atualização</span>
-                </button>
-              </form>
-            </aside>
-          </div>
-        </section>
-      </main>
+  <!-- 2. POSTS E LEGENDAS -->
+  <section id="posts" class="max-w-6xl mx-auto px-6 py-10 border-t border-white/10">
+    <div class="mb-6">
+      <p class="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#9c9ea4]">MISSÃO 4 · INSTAGRAM</p>
+      <h2 class="text-2xl font-bold mt-1">Peças da campanha e legendas</h2>
     </div>
-  </div>
 
-  <script src="./script.js"></script>
+    <div id="postsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </section>
+
+  <!-- 3. BANNERS (TV ANIMADA + CARTAZ PDF) -->
+  <section id="banners" class="max-w-6xl mx-auto px-6 py-10 border-t border-white/10">
+    <div class="mb-6">
+      <p class="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#9c9ea4]">MISSÃO 5 · BANNERS</p>
+      <h2 class="text-2xl font-bold mt-1">Banner da TV da escola e Cartaz imprimível</h2>
+    </div>
+
+    <!-- TV da escola (ciclo de 15s / 3s por frase) -->
+    <div class="rounded-2xl bg-[#121214] border border-white/10 p-8 mb-8">
+      <div class="flex items-center justify-between gap-4 mb-6">
+        <span class="text-xs font-semibold uppercase tracking-widest text-[#d8f39c]">TV DA ESCOLA · CICLO DE 15S (3S POR CENA)</span>
+        <span id="tvTimerLabel" class="text-xs text-[#9c9ea4]">0 – 3 s</span>
+      </div>
+      <div class="min-h-[160px] flex items-center justify-center text-center px-4">
+        <p id="tvSlideText" class="text-2xl sm:text-4xl font-bold tracking-tight text-white animate__animated animate__fadeInUp">
+          Alerta Escolar — Viu um problema na escola?
+        </p>
+      </div>
+    </div>
+
+    <!-- Cartaz para imprimir em PDF (Ctrl + P) -->
+    <div class="rounded-2xl bg-white text-[#111214] p-8">
+      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-gray-200 pb-4 mb-6">
+        <div>
+          <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500">CARTAZ OFICIAL (A4 / PDF)</span>
+          <h3 class="text-2xl font-extrabold tracking-tight mt-1">Viu um problema na escola? Cuidar começa com um aviso.</h3>
+        </div>
+        <button type="button" onclick="window.print()" class="no-print px-4 py-2 rounded-lg bg-[#111214] text-white text-xs font-semibold hover:opacity-90">
+          Salvar Cartaz em PDF
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-center">
+        <div class="md:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="p-4 rounded-xl bg-gray-100">
+            <strong class="block text-sm font-bold mb-1">1. Registro rápido</strong>
+            <p class="text-xs text-gray-600">Informe o item quebrado, com defeito ou faltando e o local da escola.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-gray-100">
+            <strong class="block text-sm font-bold mb-1">2. Equipe avisada</strong>
+            <p class="text-xs text-gray-600">O aviso chega ao setor responsável para avaliação e ação.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-gray-100">
+            <strong class="block text-sm font-bold mb-1">3. Acompanhamento</strong>
+            <p class="text-xs text-gray-600">Acompanhe o status de pendente até resolvido com transparência.</p>
+          </div>
+        </div>
+        <div class="flex flex-col items-center justify-center p-4 rounded-xl border border-dashed border-gray-300 text-center">
+          <div id="qrCodeBox" class="w-24 h-24 rounded-lg bg-[#111214] text-[#d8f39c] text-xs font-bold flex items-center justify-center mb-2">
+            QR CODE
+          </div>
+          <small class="text-[11px] text-gray-600">Escaneie para acessar o Alerta Escolar</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. PLANO DE 10 DIAS E AÇÃO CRIATIVA -->
+  <section id="plano" class="max-w-6xl mx-auto px-6 py-10 border-t border-white/10">
+    <div class="mb-6">
+      <p class="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#9c9ea4]">MISSÃO 6 · PLANO DE DIVULGAÇÃO</p>
+      <h2 class="text-2xl font-bold mt-1">Calendário de 10 dias e ação criativa</h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+      <div class="lg:col-span-2 rounded-xl bg-[#121214] border border-white/10 overflow-x-auto">
+        <table class="w-full text-left text-xs">
+          <thead class="border-b border-white/10 text-[#9c9ea4] uppercase">
+            <tr>
+              <th class="py-3 px-4">Dia</th>
+              <th class="py-3 px-4">O que sai</th>
+              <th class="py-3 px-4">Onde</th>
+              <th class="py-3 px-4">Responsável</th>
+            </tr>
+          </thead>
+          <tbody id="calendarBody" class="divide-y divide-white/5"></tbody>
+        </table>
+      </div>
+
+      <div class="rounded-xl bg-[#121214] border border-white/10 p-6 flex flex-col justify-between gap-6">
+        <div>
+          <span class="text-[10px] font-semibold uppercase tracking-widest text-[#d8f39c]">AÇÃO CRIATIVA</span>
+          <h3 class="text-lg font-bold mt-1 mb-2">Ponto de Atenção na Escola</h3>
+          <p class="text-xs text-[#9c9ea4] leading-relaxed">
+            Adesivos com seta e QR Code em pontos de circulação da escola convidando alunos e funcionários a testarem o registro rápido e acompanharem o retorno.
+          </p>
+        </div>
+        <div class="border-t border-white/10 pt-4 text-xs space-y-2">
+          <p><strong class="text-white">O que vamos contar:</strong> leituras do QR Code e ocorrências enviadas.</p>
+          <p><strong class="text-[#d8f39c]">Meta:</strong> 60 acessos/leituras e 25 ocorrências em 10 dias.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. EQUIPE -->
+  <section id="equipe" class="max-w-6xl mx-auto px-6 py-10 border-t border-white/10 pb-16">
+    <div class="mb-6">
+      <p class="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#9c9ea4]">MISSÃO 7 · AGÊNCIA POR UM DIA</p>
+      <h2 class="text-2xl font-bold mt-1">Equipe e cargos</h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      <div class="rounded-xl bg-[#121214] border border-white/10 p-4">
+        <strong class="block text-sm text-white">Integrante 1</strong>
+        <span class="block text-xs text-[#d8f39c] mt-1">Diretor de Arte</span>
+        <small class="block text-[11px] text-[#9c9ea4] mt-1">Visual, cores e banners</small>
+      </div>
+      <div class="rounded-xl bg-[#121214] border border-white/10 p-4">
+        <strong class="block text-sm text-white">Integrante 2</strong>
+        <span class="block text-xs text-[#d8f39c] mt-1">Redator</span>
+        <small class="block text-[11px] text-[#9c9ea4] mt-1">Slogan, textos e legendas</small>
+      </div>
+      <div class="rounded-xl bg-[#121214] border border-white/10 p-4">
+        <strong class="block text-sm text-white">Integrante 3</strong>
+        <span class="block text-xs text-[#d8f39c] mt-1">Planejador</span>
+        <small class="block text-[11px] text-[#9c9ea4] mt-1">Calendário de 10 dias e metas</small>
+      </div>
+      <div class="rounded-xl bg-[#121214] border border-white/10 p-4">
+        <strong class="block text-sm text-white">Integrante 4</strong>
+        <span class="block text-xs text-[#d8f39c] mt-1">Programador</span>
+        <small class="block text-[11px] text-[#9c9ea4] mt-1">Páginas, JSON e localStorage</small>
+      </div>
+      <div class="rounded-xl bg-[#121214] border border-white/10 p-4">
+        <strong class="block text-sm text-white">Integrante 5</strong>
+        <span class="block text-xs text-[#d8f39c] mt-1">Líder</span>
+        <small class="block text-[11px] text-[#9c9ea4] mt-1">Cronograma e entrega final</small>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const campaignData = {
+      posts: [
+        {
+          nome: "Post 1 — O problema (1080×1080)",
+          frase: "Viu algo quebrado na sala e ninguém sabia pra quem avisar?",
+          legenda: "Quando um item falha na aula, o aviso não pode se perder. Registre em poucos passos. Acesse pelo link. #AlertaEscolar #CuidadoColetivo #EscolaMelhor"
+        },
+        {
+          nome: "Post 2 — A solução (1080×1080)",
+          frase: "Cuidar começa com um aviso. Registre e acompanhe cada etapa.",
+          legenda: "Escolha o tipo, o local e acompanhe o andamento do seu registro na escola. Acesse pelo link. #AlertaEscolar #InovacaoEscolar #TecnologiaNaEscola"
+        },
+        {
+          nome: "Post 3 — O resultado (1080×1080)",
+          frase: "Do aviso ao acompanhamento em minutos. Nossa escola mais atenta.",
+          legenda: "Mais clareza no dia a dia escolar com status visível do início ao fim. Acesse pelo link. #AlertaEscolar #Transparencia #ComunidadeEscolar"
+        },
+        {
+          nome: "Carrossel (1080×1350)",
+          frase: "1. Tipo e local · 2. Descrição · 3. Acompanhe o status",
+          legenda: "Três passos rápidos para avisar e acompanhar a solução sem complicação. Acesse pelo link. #PassoAPasso #AlertaEscolar #Praticidade"
+        },
+        {
+          nome: "Story 1 — Pergunta (1080×1920)",
+          frase: "Qual problema da escola precisa de atenção primeiro?",
+          legenda: "Participe da enquete nos stories e ajude a priorizar o cuidado na escola. Acesse pelo link. #EnqueteEscolar #AlertaEscolar #SuaVoz"
+        },
+        {
+          nome: "Story 2 — Convite (1080×1920)",
+          frase: "Leia o QR Code e teste agora mesmo.",
+          legenda: "Entre no Alerta Escolar pelo celular e veja como é simples registrar. Acesse pelo link. #TesteAgora #AlertaEscolar #SENAI"
+        }
+      ],
+      tvSlides: [
+        { tempo: "0 – 3 s", texto: "Alerta Escolar — Viu um problema na escola?" },
+        { tempo: "3 – 6 s", texto: "Objeto quebrado, com defeito ou faltando? Avise quem pode resolver." },
+        { tempo: "6 – 9 s", texto: "Registre o local e acompanhe cada etapa com clareza." },
+        { tempo: "9 – 12 s", texto: "Cuidar começa com um aviso." },
+        { tempo: "12 – 15 s", texto: "Equipe notificada. Seu aviso chegou a quem cuida." }
+      ],
+      calendario: [
+        ["Dia 1", "Post 1 (O problema) + Story 1 (Enquete)", "Instagram e murais", "Redator"],
+        ["Dia 2", "TV da escola (15s) + Cartaz A4", "TV e murais da escola", "Diretor de Arte"],
+        ["Dia 3", "Carrossel (3 passos de uso)", "Instagram", "Programador"],
+        ["Dia 4", "Story 2 (Convite + QR Code)", "Instagram e salas", "Planejador"],
+        ["Dia 5", "Ação criativa Ponto de Atenção", "Áreas comuns", "Equipe"],
+        ["Dia 6", "Post 2 (A solução)", "Instagram", "Diretor de Arte"],
+        ["Dia 7", "Story com dúvidas frequentes", "Instagram", "Redator"],
+        ["Dia 8", "Post 3 (O resultado)", "Instagram", "Planejador"],
+        ["Dia 9", "Reforço na TV e murais", "TV e murais", "Programador"],
+        ["Dia 10", "Balanço e publicação final", "GitHub Pages e redes", "Líder"]
+      ]
+    };
+
+    try {
+      localStorage.setItem("alertaEscolarCampanha2026", JSON.stringify(campaignData));
+    } catch (e) {}
+
+    fetch("./dados.json")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((externalData) => {
+        if (externalData && Array.isArray(externalData.posts)) {
+          renderPosts(externalData.posts);
+        }
+      })
+      .catch(() => {});
+
+    const postsContainer = document.getElementById("postsContainer");
+    function renderPosts(items) {
+      if (!postsContainer) return;
+      postsContainer.innerHTML = items
+        .map(
+          (item) => `
+          <article class="rounded-xl bg-[#121214] border border-white/10 p-5 flex flex-col justify-between gap-4">
+            <div>
+              <span class="text-[10px] font-semibold uppercase tracking-widest text-[#d8f39c]">${item.nome}</span>
+              <div class="mt-3 p-4 rounded-lg bg-[#0b0b0c] border border-white/10">
+                <p class="text-base font-bold text-white leading-snug">${item.frase}</p>
+              </div>
+            </div>
+            <p class="text-xs text-[#9c9ea4] leading-relaxed">${item.legenda}</p>
+          </article>
+        `
+        )
+        .join("");
+    }
+    renderPosts(campaignData.posts);
+
+    const calendarBody = document.getElementById("calendarBody");
+    if (calendarBody) {
+      calendarBody.innerHTML = campaignData.calendario
+        .map(
+          (row) => `
+          <tr>
+            <td class="py-2.5 px-4 font-semibold text-white">${row[0]}</td>
+            <td class="py-2.5 px-4 text-[#f5f5f6]">${row[1]}</td>
+            <td class="py-2.5 px-4 text-[#9c9ea4]">${row[2]}</td>
+            <td class="py-2.5 px-4 text-[#d8f39c]">${row[3]}</td>
+          </tr>
+        `
+        )
+        .join("");
+    }
+
+    const tvSlideText = document.getElementById("tvSlideText");
+    const tvTimerLabel = document.getElementById("tvTimerLabel");
+    let slideIndex = 0;
+
+    setInterval(() => {
+      slideIndex = (slideIndex + 1) % campaignData.tvSlides.length;
+      const current = campaignData.tvSlides[slideIndex];
+      if (tvSlideText && tvTimerLabel) {
+        tvTimerLabel.textContent = current.tempo;
+        tvSlideText.classList.remove("animate__fadeInUp");
+        void tvSlideText.offsetWidth;
+        tvSlideText.textContent = current.texto;
+        tvSlideText.classList.add("animate__fadeInUp");
+      }
+    }, 3000);
+  </script>
 </body>
 </html>
